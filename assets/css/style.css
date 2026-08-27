@@ -1,0 +1,566 @@
+/* ==========================================================================
+   PATRIO HOMEPAGE — LUXURY STANDALONE CSS
+   Dark Cinematic Editorial Aesthetic
+   ========================================================================== */
+
+/* Font Import: Cormorant Garamond (High-contrast Serif) & Montserrat (Clean Sans-serif) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* CSS Variables */
+:root {
+  --font-serif: 'Cormorant Garamond', 'Didot', 'Bodoni MT', 'Cinzel', serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --color-bg: #070707;
+  --color-text-primary: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.65);
+  --color-text-subtle: rgba(255, 255, 255, 0.4);
+  --color-border: rgba(255, 255, 255, 0.7);
+  --color-border-hover: #ffffff;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   HERO CONTAINER SECTION (100vh Full Screen)
+   ========================================================================== */
+/* ==========================================================================
+   HERO CONTAINER SECTION (100vh Full Screen)
+   ========================================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #070707;
+  overflow: hidden;
+}
+
+/* Right-Side Hero Image Container (50/50 Visual Split) */
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 85% top;
+  display: block;
+}
+
+/* Seamless Left Blend Layer for Typography Clarity */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    #070707 0%, 
+    #070707 65%, 
+    rgba(7, 7, 7, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   HEADER / NAVIGATION
+   ========================================================================== */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 6% 1.2rem 6%;
+  z-index: 10;
+}
+
+/* Logo Badge */
+.logo {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo-badge {
+  display: inline-block;
+  border: 1.5px solid var(--color-text-primary);
+  padding: 0.3rem 0.85rem 0.2rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  transition: var(--transition-fast);
+}
+
+.logo-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Navigation Links */
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* Active indicator under HOME */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+}
+
+/* Right Navigation Group (London + Hamburger) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.location-tag {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+
+.nav-separator {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+/* Minimal Hamburger Icon */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle:hover span {
+  opacity: 0.7;
+}
+
+/* Active state for mobile menu toggle */
+.menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(3.25px) rotate(45deg);
+}
+.menu-toggle.is-active span:nth-child(2) {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   MOBILE NAVIGATION DRAWER
+   ========================================================================== */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(7, 7, 7, 0.96);
+  backdrop-filter: blur(15px);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.mobile-nav-links a:hover {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   HERO CONTENT AREA (Left Side Placement)
+   ========================================================================== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-left: 6%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 1.5rem;
+  max-width: clamp(520px, 44vw, 840px);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 0.95vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  display: block;
+}
+
+.main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(4.2rem, 6.2vw, 7.6rem);
+  font-weight: 400;
+  line-height: 1.01;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.divider-line {
+  width: 38px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 0.88vw, 0.92rem);
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  margin-bottom: 2.6rem;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.68rem, 0.8vw, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  padding: 1rem 2.4rem;
+  border: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  transition: var(--transition-smooth);
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #070707;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SCROLL INDICATOR (Bottom-Left)
+   ========================================================================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 6%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  animation: scrollPulse 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: translateY(-100%); }
+  50%, 100% { transform: translateY(100%); }
+}
+
+.scroll-text {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ENTRANCE ANIMATIONS & ACCESSIBILITY
+   ========================================================================== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.6s; }
+.delay-5 { animation-delay: 0.75s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scroll-line::after {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .hero-content {
+    margin-left: 6%;
+    max-width: clamp(520px, 42vw, 700px);
+  }
+  .scroll-indicator {
+    left: 6%;
+  }
+}
+
+/* Medium Desktop / Laptops */
+@media (max-width: 1200px) {
+  .nav-center {
+    gap: 1.5rem;
+  }
+  .hero-content {
+    margin-left: 6%;
+    max-width: clamp(440px, 44vw, 560px);
+  }
+}
+
+/* Small Laptops / Tablets */
+@media (max-width: 768px) {
+  .header {
+    padding: 1.4rem 5%;
+  }
+  .nav-center {
+    display: none; /* Hide main links on mobile/small tablet */
+  }
+  .location-tag {
+    display: inline-block;
+  }
+  .hero-image-container {
+    width: 60%;
+  }
+  .hero-content {
+    margin-left: 6%;
+    max-width: 420px;
+  }
+  .main-heading {
+    font-size: clamp(2.6rem, 5.5vw, 3.4rem);
+  }
+  .scroll-indicator {
+    left: 6%;
+    bottom: 2rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 640px) {
+  .hero-image-container {
+    width: 100%;
+  }
+
+  .hero-image {
+    object-position: 80% center;
+  }
+
+  .hero::before {
+    width: 100%;
+    background: linear-gradient(
+      180deg, 
+      rgba(7, 7, 7, 0.65) 0%, 
+      rgba(7, 7, 7, 0.4) 40%, 
+      rgba(7, 7, 7, 0.85) 100%
+    );
+  }
+
+  .header {
+    padding: 1.2rem 6%;
+  }
+
+  .logo-badge {
+    font-size: 0.95rem;
+    padding: 0.28rem 0.7rem 0.2rem 0.7rem;
+  }
+
+  .location-tag {
+    font-size: 0.6rem;
+  }
+
+  .hero-content {
+    margin-left: 6%;
+    margin-right: 6%;
+    max-width: 100%;
+    padding-bottom: 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 0.8rem;
+  }
+
+  .main-heading {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .divider-line {
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.8rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .scroll-indicator {
+    left: 6%;
+    bottom: 1.8rem;
+  }
+}
