@@ -112,33 +112,28 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.8rem 6% 1.2rem 6%;
+  padding: 1.2rem 6% 1.2rem 6%;
   z-index: 10;
 }
 
-/* Logo Badge */
+/* Logo */
 .logo {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-}
-
-.logo-badge {
-  display: inline-block;
-  border: 1.5px solid var(--color-text-primary);
-  padding: 0.3rem 0.85rem 0.2rem 0.85rem;
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--color-text-primary);
-  text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(2px);
   transition: var(--transition-fast);
 }
 
-.logo-badge:hover {
-  background: rgba(255, 255, 255, 0.1);
+.logo-image {
+  height: 105px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: var(--transition-fast);
+}
+
+.logo:hover .logo-image {
+  opacity: 0.85;
 }
 
 /* Main Navigation Links */
@@ -467,7 +462,10 @@ body {
 /* Small Laptops / Tablets */
 @media (max-width: 768px) {
   .header {
-    padding: 1.4rem 5%;
+    padding: 1.2rem 5%;
+  }
+  .logo-image {
+    height: 87px;
   }
   .nav-center {
     display: none; /* Hide main links on mobile/small tablet */
@@ -512,12 +510,11 @@ body {
   }
 
   .header {
-    padding: 1.2rem 6%;
+    padding: 1rem 6%;
   }
 
-  .logo-badge {
-    font-size: 0.95rem;
-    padding: 0.28rem 0.7rem 0.2rem 0.7rem;
+  .logo-image {
+    height: 72px;
   }
 
   .location-tag {
