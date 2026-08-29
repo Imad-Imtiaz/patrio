@@ -12,9 +12,10 @@
   <meta name="description" content="PATRIO — A New Standard Is Coming. Premium luxury fashion & editorial collection.">
   <title>PATRIO — Stand For Something</title>
 
-  <!-- Preconnect to Google Fonts -->
+  <!-- Google Fonts: Bodoni Moda & Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Preload Hero Background Image -->
   <link rel="preload" as="image" href="assets/images/hero.jpg">
@@ -42,54 +43,70 @@
       <!-- Center/Right Navigation -->
       <ul class="nav-center">
         <li><a href="#home" class="nav-link active">HOME</a></li>
-        <li><a href="#philosophy" class="nav-link">PHILOSOPHY</a></li>
-        <li><a href="#standard" class="nav-link">THE STANDARD</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="philosophy.html" class="nav-link">PHILOSOPHY</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="#edit" class="nav-link">THE EDIT</a></li>
+        <li class="nav-separator">|</li>
         <li><a href="#journal" class="nav-link">JOURNAL</a></li>
+        <li class="nav-separator">|</li>
         <li><a href="#join" class="nav-link">JOIN THE LIST</a></li>
       </ul>
-
-      <!-- Right Side: Location & Hamburger Toggle -->
-      <div class="header-right">
-        <span class="location-tag">LONDON</span>
-        <span class="nav-separator">|</span>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
     </nav>
-
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
-      <ul class="mobile-nav-links">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#philosophy">PHILOSOPHY</a></li>
-        <li><a href="#standard">THE STANDARD</a></li>
-        <li><a href="#journal">JOURNAL</a></li>
-        <li><a href="#join">JOIN THE LIST</a></li>
-      </ul>
-    </div>
 
     <!-- Hero Content (Left Side Placement) -->
     <div class="hero-content">
       <span class="eyebrow fade-in-up delay-2">INTRODUCING PATRIO</span>
       
-      <h1 class="main-heading fade-in-up delay-3">STAND FOR<br>SOMETHING.</h1>
+      <h1 class="main-heading fade-in-up delay-3">QUIETLY<br>DISTINCTIVE</h1>
       
       <div class="divider-line fade-in-up delay-4"></div>
       
-      <p class="tagline fade-in-up delay-4">A NEW STANDARD IS COMING.</p>
+      <p class="tagline fade-in-up delay-4">DISTINCTION NEEDS NO ANNOUNCEMENT</p>
       
-      <a href="#join" class="cta-button fade-in-up delay-5">JOIN THE PATRIO LIST</a>
-    </div>
-
-    <!-- Scroll Indicator (Bottom Left) -->
-    <div class="scroll-indicator fade-in-up delay-5">
-      <div class="scroll-line"></div>
-      <span class="scroll-text">SCROLL</span>
+      <a href="#join" class="cta-button fade-in-up delay-5">REQUEST ACCESS</a>
     </div>
 
   </header>
+
+  <!-- Global Footer — Single consistent bar across all pages -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left: Copyright -->
+      <p class="footer-copy">&copy; 2026 Patrio &mdash; All Rights Reserved</p>
+
+      <!-- Right: Social Icons -->
+      <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="#" class="footer-social-link" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="footer-icon">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- X (Twitter) -->
+        <a href="#" class="footer-social-link" aria-label="X">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="footer-icon">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L2.25 2.25h6.865l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+          </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="#" class="footer-social-link" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="footer-icon">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="#" class="footer-social-link" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="footer-icon">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Vanilla JavaScript -->
   <script src="assets/js/main.js"></script>

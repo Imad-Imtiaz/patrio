@@ -1,0 +1,571 @@
+/* ==========================================================================
+   PATRIO PHILOSOPHY PAGE — STRUCTURAL FRAMEWORK
+   Editorial, Dark Cinematic & High-Contrast Luxury
+   ========================================================================== */
+
+/* Google Font Import: Bodoni Moda (Editorial Didone Serif) & Montserrat (Sans-serif) */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* CSS Variables */
+:root {
+  --font-serif: 'Bodoni Moda', 'Didot', 'Bodoni MT', 'Cinzel', serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Colors */
+  --color-bg-dark: #070707;
+  --color-bg-light: #eae6e1;
+  --color-text-light: #ffffff;
+  --color-text-dark: #111111;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+  --color-text-subtle: rgba(255, 255, 255, 0.45);
+  --color-gold: #FFE699;
+  
+  --spacing-container: 6%;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-dark);
+  overflow: auto;
+  height: auto;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   1. HEADER & NAVIGATION (Matching Patrio System)
+   ========================================================================== */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem var(--spacing-container);
+  z-index: 100;
+  background: transparent;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 90px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-light);
+}
+
+.nav-separator {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+/* Generic Section Layout */
+.section {
+  position: relative;
+  width: 100%;
+}
+
+/* Eyebrows & Dividers */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.divider {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 1.4rem 0;
+}
+
+.editorial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   2. PHILOSOPHY HERO (Split Screen - 100vh)
+   ========================================================================== */
+.section-hero {
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0;
+  align-items: stretch;
+  background-color: var(--color-bg-dark);
+}
+
+.hero-left {
+  height: 100%;
+  padding: 8rem 5% 4.5rem 10%;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(3.6rem, 5.04vw, 5.22rem);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--color-gold);
+  text-transform: none;
+  margin-bottom: 0.2rem;
+  width: 100%;
+}
+
+.hero-headline span {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-description {
+  font-family: var(--font-sans);
+  font-size: clamp(0.76rem, 0.85vw, 0.84rem);
+  line-height: 1.68;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  max-width: 340px;
+}
+
+.hero-right {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-image-wrapper .editorial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* ==========================================================================
+   3. THE ESSENCE (Split Section - Strict 50/50)
+   ========================================================================== */
+.section-essence {
+  height: clamp(560px, 70vh, 660px);
+  min-height: 540px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0;
+  align-items: stretch;
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.essence-left {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 4.5rem 6% 4.5rem 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.essence-left .eyebrow {
+  font-size: clamp(0.7rem, 0.8vw, 0.78rem);
+  letter-spacing: 0.26em;
+  margin-bottom: 1.1rem;
+}
+
+.essence-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(3.2rem, 4.5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.essence-body p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 0.9vw, 0.86rem);
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+  max-width: 460px;
+}
+
+.essence-right {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.essence-image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.essence-image-wrapper .editorial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ==========================================================================
+   4. THREE PRINCIPLES (Three-Column Editorial Section)
+   ========================================================================== */
+.section-principles {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  padding: 3.85rem 5%;   /* was 5.5rem → ×0.7 */
+  width: 100%;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  /* Align every row band (eyebrow / heading / text / image) across columns */
+  align-items: start;
+}
+
+/* Vertical dividers: left border on grid, right border on each column */
+.principles-grid {
+  border-left: 1px solid rgba(17, 17, 17, 0.15);
+}
+
+.principle-column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3.5rem;
+  border-right: 1px solid rgba(17, 17, 17, 0.15);
+  /* Make each column a subgrid so rows align pixel-perfectly */
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+}
+
+/* ── Row 1: Category label ─────────────────────────────────────── */
+.principle-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: rgba(17, 17, 17, 0.5);
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+  padding-bottom: 1.4rem;   /* was 2rem → ×0.7 */
+}
+
+/* ── Row 2: Large heading (two lines) ──────────────────────────── */
+.principle-heading {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2.6rem, 3.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #111111;
+  display: block;
+  padding-bottom: 1.54rem;   /* was 2.2rem → ×0.7 */
+}
+
+/* ── Row 3: Body paragraph ─────────────────────────────────────── */
+.principle-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.84rem, 0.95vw, 0.95rem);
+  line-height: 1.75;
+  color: rgba(17, 17, 17, 0.7);
+  display: block;
+  padding-bottom: 1.96rem;   /* was 2.8rem → ×0.7 */
+}
+
+/* ── Row 4: Image — fills remaining height ─────────────────────── */
+.principle-image-box {
+  width: 100%;
+  height: clamp(210px, 24.5vw, 336px);   /* was clamp(300px, 35vw, 480px) → ×0.7 */
+  overflow: hidden;
+  display: block;
+  align-self: end;
+}
+
+.principle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ==========================================================================
+   5. THE PATRIO BELIEF (Editorial Statement Section)
+   ========================================================================== */
+.section-belief {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding: 6rem var(--spacing-container);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.belief-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.belief-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.belief-headline {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.8rem, 2.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.belief-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.belief-narrative {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+
+.belief-divider {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 1.8rem 0;
+}
+
+.belief-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.belief-brand {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: #ffffff;
+}
+
+.belief-sub {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--color-gold);
+}
+
+.belief-image-container {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+/* ==========================================================================
+   6. FOOTER — styles shared via style.css (do not duplicate here)
+   ========================================================================== */
+
+/* ==========================================================================
+   RESPONSIVE STACKING
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .section-hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+  .hero-left {
+    height: auto;
+    padding: 6.5rem var(--spacing-container) 2.5rem;
+    max-width: 100%;
+  }
+  .hero-image-wrapper {
+    min-height: 380px;
+    height: 380px;
+  }
+  .section-essence {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+  .essence-left {
+    height: auto;
+    padding: 3rem var(--spacing-container) 2rem;
+    max-width: 100%;
+  }
+  .essence-image-wrapper {
+    min-height: 320px;
+    height: 320px;
+  }
+  .principles-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .principle-column {
+    /* Override subgrid back to flex for stacked mobile */
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    border-right: none;
+    border-top: 1px solid rgba(17, 17, 17, 0.12);
+  }
+  .principle-column:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+  .principle-eyebrow {
+    padding-bottom: 1.2rem;
+  }
+  .principle-heading {
+    padding-bottom: 1.4rem;
+  }
+  .principle-text {
+    padding-bottom: 2rem;
+  }
+  .principle-image-box {
+    height: clamp(220px, 55vw, 360px);
+  }
+  .section-belief {
+    grid-template-columns: 1fr;
+    padding: 4rem var(--spacing-container);
+  }
+  .belief-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem 5%;
+  }
+  .logo-image {
+    height: 55px;
+  }
+  .nav-center {
+    gap: 0.6rem;
+  }
+  .nav-link {
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+  }
+  .nav-separator {
+    font-size: 0.52rem;
+  }
+  .hero-headline {
+    font-size: 32px;
+  }
+  .essence-headline {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+}
