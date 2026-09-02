@@ -52,80 +52,9 @@ body {
 }
 
 /* ==========================================================================
-   1. HEADER & NAVIGATION (Matching Patrio System)
+   1. PAGE-SPECIFIC BASE STYLES
+   (Header & Footer styles are shared globally via style.css)
    ========================================================================== */
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem var(--spacing-container);
-  z-index: 100;
-  background: transparent;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-image {
-  height: 90px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.nav-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-center {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  list-style: none;
-}
-
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  color: rgba(255, 255, 255, 0.85);
-  text-transform: uppercase;
-  padding-bottom: 4px;
-  transition: color 0.25s ease;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--color-text-light);
-}
-
-.nav-separator {
-  color: rgba(255, 255, 255, 0.35);
-  font-weight: 300;
-  font-size: 0.75rem;
-  user-select: none;
-}
 
 /* Generic Section Layout */
 .section {
@@ -210,15 +139,112 @@ body {
   max-width: 340px;
 }
 
+/* ==========================================================================
+   Subtle Editorial Scroll Cue
+   ========================================================================== */
+.hero-scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: clamp(2rem, 3.8vh, 3.2rem);
+  user-select: none;
+  pointer-events: none;
+}
+
+.scroll-cue-text {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.scroll-cue-line {
+  position: relative;
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.12) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  overflow: hidden;
+}
+
+.scroll-cue-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: scrollLineDrop 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scrollLineDrop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(38px);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-line::after {
+    animation: none;
+    opacity: 0.4;
+    transform: none;
+  }
+}
+
 .hero-right {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .hero-image-wrapper {
+  position: relative;
   height: 100%;
   width: 100%;
+}
+
+/* Subtle editorial tonal blend from left edge of image into black background */
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #070707 0%,
+    rgba(7, 7, 7, 0.72) 28%,
+    rgba(7, 7, 7, 0.32) 62%,
+    rgba(7, 7, 7, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero-image-wrapper .editorial-image {
@@ -493,6 +519,16 @@ body {
     min-height: 380px;
     height: 380px;
   }
+  .hero-image-wrapper::before {
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(
+      180deg,
+      #070707 0%,
+      rgba(7, 7, 7, 0.6) 35%,
+      rgba(7, 7, 7, 0) 100%
+    );
+  }
   .section-essence {
     grid-template-columns: 1fr;
     height: auto;
@@ -546,22 +582,6 @@ body {
 }
 
 @media (max-width: 640px) {
-  .header {
-    padding: 1rem 5%;
-  }
-  .logo-image {
-    height: 55px;
-  }
-  .nav-center {
-    gap: 0.6rem;
-  }
-  .nav-link {
-    font-size: 0.52rem;
-    letter-spacing: 0.12em;
-  }
-  .nav-separator {
-    font-size: 0.52rem;
-  }
   .hero-headline {
     font-size: 32px;
   }
