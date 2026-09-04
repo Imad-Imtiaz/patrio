@@ -123,8 +123,6 @@ body {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  margin-left: 1.25rem;
-  margin-top: 0.35rem;
   transition: var(--transition-fast);
 }
 
@@ -412,10 +410,6 @@ body {
   .header {
     padding: 1rem 5%;
   }
-  .logo {
-    margin-left: 0.6rem;
-    margin-top: 0.2rem;
-  }
   .logo-image {
     height: 68px;
   }
@@ -463,11 +457,6 @@ body {
 
   .header {
     padding: 0.85rem 5%;
-  }
-
-  .logo {
-    margin-left: 0.35rem;
-    margin-top: 0.15rem;
   }
 
   .logo-image {
