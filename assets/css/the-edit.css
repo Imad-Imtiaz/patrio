@@ -1,0 +1,1257 @@
+/* ==========================================================================
+   PATRIO — THE EDIT PAGE STYLESHEET
+   Adheres to Patrio Design Framework (Philosophy Page & style.css)
+   Sections 1 – 5 Layout, Spacing, Typography, and Neutral Placeholders
+   ========================================================================== */
+
+/* Page-specific Theme Variables */
+:root {
+  --edit-bg-dark: #070707;
+  --edit-bg-light: #f5f4f0; /* Warm subtle luxury ivory/off-white background matching editorial mockup */
+  --edit-text-light: #ffffff;
+  --edit-text-dark: #111111;
+  --edit-text-muted: rgba(255, 255, 255, 0.7);
+  --edit-text-muted-dark: rgba(17, 17, 17, 0.68);
+  --edit-text-subtle: rgba(255, 255, 255, 0.45);
+  --edit-gold: #FFE699;
+  --edit-border-dark: rgba(255, 255, 255, 0.2);
+  --edit-border-light: rgba(17, 17, 17, 0.15);
+}
+
+/* Base resets & document settings */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background-color: var(--edit-bg-dark);
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+}
+
+body {
+  background-color: var(--edit-bg-dark);
+  color: var(--edit-text-light);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   HEADER / NAVBAR SCROLL BEHAVIOR
+   Behaves as a normal page header: stays at top initially and scrolls
+   away naturally with the page content without viewport sticking.
+   ========================================================================== */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Common Generic Placeholder UI */
+.edit-media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #161616;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.edit-media-placeholder svg {
+  width: 28px;
+  height: 28px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Light background variant for placeholders */
+.edit-media-placeholder.light-placeholder {
+  background-color: #eceae5;
+  color: rgba(17, 17, 17, 0.35);
+  border-color: rgba(17, 17, 17, 0.08);
+}
+
+.edit-media-placeholder.light-placeholder svg {
+  color: rgba(17, 17, 17, 0.25);
+}
+
+/* ==========================================================================
+   SECTION 1: HERO — DEMANDS RESPECT. (Split-screen 100vh)
+   ========================================================================== */
+.edit-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: stretch;
+  background-color: var(--edit-bg-dark);
+  overflow: hidden;
+}
+
+/* Left Content Area — Uses exact Philosophy Hero content alignment & typography */
+.edit-hero-left {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Adheres to Philosophy page's .hero-left.hero-content offset */
+.edit-hero-left.hero-content {
+  margin-left: 12.13%;
+  max-width: clamp(380px, 40vw, 560px);
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Eyebrow: THE EDIT */
+.edit-hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(0.62rem, 0.85vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: clamp(1rem, 1.8vh, 1.6rem);
+  display: block;
+}
+
+/* Main Headline: DEMANDS RESPECT. */
+.edit-hero-title {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2.4rem, 4.4vw, 5.2rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: clamp(1.2rem, 2vh, 1.8rem);
+  word-break: break-word;
+}
+
+/* Secondary Subhead: WITHOUT DEMANDING ATTENTION. */
+.edit-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.68rem, 0.85vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  margin-bottom: clamp(1.2rem, 2.2vh, 2rem);
+  display: block;
+}
+
+/* Description paragraph */
+.edit-hero-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.76rem, 0.88vw, 0.92rem);
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  color: var(--edit-text-muted);
+  max-width: 440px;
+  margin-bottom: clamp(1.8rem, 3.2vh, 2.8rem);
+}
+
+/* CTA Button: EXPLORE THE EDIT → */
+.edit-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.62rem, 0.75vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: var(--edit-text-light);
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  transition: var(--transition-smooth);
+  align-self: flex-start;
+}
+
+.edit-cta-button .btn-arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.edit-cta-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #070707;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.edit-cta-button:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Side: Hero Visual & Editorial Accent */
+.edit-hero-right {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Hero Media Container (Built for seamless image replacement) */
+.edit-hero-media-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+}
+
+/* Seamless Left Blend Layer matching Patrio Philosophy style */
+.edit-hero-media-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #070707 0%,
+    rgba(7, 7, 7, 0.8) 30%,
+    rgba(7, 7, 7, 0.3) 65%,
+    rgba(7, 7, 7, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Neutral Placeholder when image is pending */
+.edit-hero-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 60% 40%, #1a1a1a 0%, #0d0d0d 75%, #070707 100%);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.edit-hero-placeholder svg {
+  width: 42px;
+  height: 42px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+.edit-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+/* Right-Side Editorial Statement: A HIGHER STANDARD FOR EVERYDAY. */
+.edit-hero-side-statement {
+  position: absolute;
+  right: 6%;
+  bottom: 18%;
+  z-index: 3;
+  text-align: right;
+  pointer-events: none;
+}
+
+.edit-hero-side-statement p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.58rem, 0.72vw, 0.76rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SECTION 2: THE FIRST EDIT (Product Palette & Editorial Statement)
+   Light luxury background matching the Patrio editorial system
+   ========================================================================== */
+.section-first-edit {
+  background-color: var(--edit-bg-light);
+  color: var(--edit-text-dark);
+  padding: 5.5rem 6%;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Overall Grid Layout: 3 Columns (Left Narrative | Middle 9-Product Grid | Right Statement) */
+.first-edit-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr 200px;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* Left Narrative Column */
+.first-edit-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-edit-intro .eyebrow {
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 1.2rem;
+}
+
+.first-edit-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.first-edit-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 0.86vw, 0.88rem);
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: var(--edit-text-muted-dark);
+  margin-bottom: 2rem;
+}
+
+/* Dark Button for Light Background: VIEW THE COLLECTION → */
+.edit-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.6rem, 0.72vw, 0.74rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #111111;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  border: 1px solid rgba(17, 17, 17, 0.35);
+  background: transparent;
+  transition: var(--transition-smooth);
+  align-self: flex-start;
+}
+
+.edit-btn-dark .btn-arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.edit-btn-dark:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-2px);
+}
+
+.edit-btn-dark:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Center: 9-Product Palette Grid */
+.palette-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  width: 100%;
+}
+
+/* Row 1: 5 Columns */
+.palette-row-top {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+}
+
+/* Row 2: 4 Columns (matches the 4 colors in reference) */
+.palette-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 column tracks so they align perfectly under row 1 */
+  gap: 1.2rem;
+}
+
+/* Product Card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image Slot / Placeholder Container */
+.product-image-slot {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  background-color: #eceae5;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+
+.product-image-slot:hover {
+  transform: translateY(-4px);
+  border-color: rgba(17, 17, 17, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Neutral Placeholder Visual Box */
+.product-placeholder-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #f0eeea;
+  transition: background 0.3s ease;
+}
+
+.product-placeholder-box svg {
+  width: 28px;
+  height: 28px;
+  color: rgba(17, 17, 17, 0.25);
+  margin-bottom: 0.4rem;
+}
+
+.product-placeholder-text {
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.35);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* When final product images are plugged in later */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Color Label below the image */
+.product-color-name {
+  font-family: var(--font-sans);
+  font-size: clamp(0.58rem, 0.7vw, 0.68rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #111111;
+  text-transform: uppercase;
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
+/* Right Editorial Statement Column */
+.first-edit-statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  border-left: 1px solid var(--edit-border-light);
+  height: 100%;
+}
+
+.first-edit-statement-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.64rem, 0.78vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1.85;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SECTION 3: EDITORIAL / THE SILHOUETTE (Refined To The Essential.)
+   Warm light background transitioning smoothly with deep editorial focus
+   ========================================================================== */
+.section-silhouette {
+  background-color: #ffffff;
+  color: var(--edit-text-dark);
+  padding: 6rem 6%;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.silhouette-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left Main Column: Full Editorial Background Image Panel */
+.silhouette-main-col {
+  position: relative;
+  background-color: #121212;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.68) 45%, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0) 100%),
+    url('../images/patrio-polo-section3-ref.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.silhouette-content-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 3rem;
+  max-width: 520px;
+}
+
+.silhouette-content-overlay .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 1.2rem;
+}
+
+.silhouette-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.silhouette-narrative {
+  font-family: var(--font-sans);
+  font-size: clamp(0.82rem, 0.9vw, 0.94rem);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 480px;
+  margin-bottom: 2.2rem;
+}
+
+.edit-cta-button-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.6rem, 0.72vw, 0.76rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  transition: var(--transition-smooth);
+  align-self: flex-start;
+}
+
+.edit-cta-button-light .btn-arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.edit-cta-button-light:hover {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.edit-cta-button-light:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Details Column: Craftsmanship in Every Detail (2x2 grid) */
+.silhouette-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.craftsmanship-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.craftsmanship-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: rgba(17, 17, 17, 0.5);
+  text-transform: uppercase;
+}
+
+.craftsmanship-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.8rem;
+}
+
+.craftsmanship-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.craftsmanship-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #f0eeea;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.craftsmanship-card:hover .craftsmanship-media {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.detail-placeholder {
+  background: #f0eeea;
+  color: rgba(17, 17, 17, 0.35);
+}
+
+.detail-placeholder svg {
+  width: 24px;
+  height: 24px;
+  color: rgba(17, 17, 17, 0.22);
+}
+
+.craftsmanship-item-title {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.craftsmanship-item-desc {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--edit-text-muted-dark);
+}
+
+/* ==========================================================================
+   SECTION 4: THE PATRIO MARK & IDENTITY
+   Intimate, Tonal, High-Contrast Luxury Grid
+   ========================================================================== */
+.section-mark-identity {
+  background-color: var(--edit-bg-dark);
+  color: var(--edit-text-light);
+  padding: 6rem 6%;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mark-identity-grid {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.identity-tile {
+  background-color: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.35s ease;
+}
+
+.identity-tile:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Tile 1: Tonal Emblem */
+.tile-emblem-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 2rem;
+  background-color: #040404;
+}
+
+.emblem-placeholder {
+  background: radial-gradient(circle at center, #181818 0%, #080808 100%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.placeholder-brand-word {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.16);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.tile-emblem-title {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.tile-emblem-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--edit-text-muted);
+}
+
+/* Tile 2: Folded Palette Stack */
+.palette-stack-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 2rem;
+  background-color: #121212;
+}
+
+.stack-placeholder {
+  background: #141414;
+}
+
+.tile-palette-stack .eyebrow {
+  margin-bottom: 0.8rem;
+  font-size: 0.65rem;
+}
+
+.tile-stack-title {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--edit-gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.tile-stack-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--edit-text-muted);
+}
+
+/* Tile 3: Product Passport */
+.passport-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 2rem;
+  background-color: #121212;
+}
+
+.passport-placeholder {
+  background: #141414;
+  padding: 1rem;
+}
+
+.passport-card-mockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: #f7f5f0;
+  color: #111111;
+  width: 78%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.passport-mockup-brand {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+}
+
+.passport-mockup-sub {
+  font-size: 0.48rem;
+  letter-spacing: 0.22em;
+  color: rgba(17, 17, 17, 0.6);
+  margin-bottom: 0.4rem;
+}
+
+.passport-mockup-num {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #111111;
+  margin-bottom: 0.4rem;
+}
+
+.passport-mockup-city {
+  font-size: 0.45rem;
+  letter-spacing: 0.24em;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.passport-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.passport-desc {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--edit-text-muted);
+}
+
+/* ==========================================================================
+   SECTION 5: CLOSING / THE EDIT (Lifestyle Trilogy & Quiet Recognition)
+   ========================================================================== */
+.section-closing {
+  background-color: #0a0a0a;
+  color: var(--edit-text-light);
+  padding-top: 6rem;
+  padding-bottom: 5.5rem;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Part 1: Lifestyle Triptych */
+.lifestyle-triptych-section {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 6% 6rem 6%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4.5rem;
+  align-items: start;
+}
+
+.lifestyle-intro .eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.lifestyle-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.lifestyle-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lifestyle-media {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background-color: #141414;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.lifestyle-placeholder {
+  background: #161616;
+}
+
+.lifestyle-caption {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+
+/* Part 2: Closing Statement & Action */
+.closing-statement-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4.5rem 6% 1rem 6%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.closing-eyebrow {
+  margin-bottom: 1.4rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.closing-headline {
+  font-family: 'Bodoni Moda', var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(1.6rem, 2.4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.closing-subtext {
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 0.88vw, 0.94rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--edit-text-muted);
+  margin-bottom: 2.6rem;
+}
+
+.closing-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: clamp(0.64rem, 0.76vw, 0.8rem);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 1rem 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: #1c1c1c;
+  transition: var(--transition-smooth);
+}
+
+.closing-cta-button .btn-arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.closing-cta-button:hover {
+  background: #ffffff;
+  color: #070707;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.closing-cta-button:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Matching Philosophy page responsive stacking rules)
+   Breakpoints: 1440px+, 1280px, 1024px, 768px, 540px, 390px, 375px
+   ========================================================================== */
+
+/* Large screens (1440px+) */
+@media (min-width: 1440px) {
+  .first-edit-container {
+    grid-template-columns: 320px 1fr 220px;
+    gap: 4.5rem;
+  }
+}
+
+/* Medium Desktop / Laptops (1025px - 1280px) */
+@media (max-width: 1280px) {
+  .edit-hero-left.hero-content {
+    margin-left: 8%;
+    max-width: 460px;
+  }
+
+  .first-edit-container {
+    grid-template-columns: 240px 1fr 180px;
+    gap: 2.5rem;
+  }
+
+  .silhouette-container {
+    gap: 3.5rem;
+  }
+
+  .mark-identity-grid {
+    gap: 1.8rem;
+  }
+
+  .lifestyle-triptych-section {
+    grid-template-columns: 260px 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Tablet Landscape & Medium Screens (769px - 1024px) */
+@media (max-width: 1024px) {
+  .edit-hero-section {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+  }
+
+  .edit-hero-left {
+    height: auto;
+  }
+
+  .edit-hero-left.hero-content {
+    margin-left: 6%;
+    margin-right: 6%;
+    max-width: 90%;
+    padding: 7rem 0 3.5rem 0;
+  }
+
+  .edit-hero-right {
+    min-height: 480px;
+    height: 480px;
+  }
+
+  .edit-hero-media-container::before {
+    width: 100%;
+    height: 38%;
+    background: linear-gradient(
+      180deg,
+      #070707 0%,
+      rgba(7, 7, 7, 0.75) 30%,
+      rgba(7, 7, 7, 0) 100%
+    );
+  }
+
+  .edit-hero-side-statement {
+    right: 6%;
+    bottom: 2rem;
+  }
+
+  /* Section 2 stacking */
+  .section-first-edit {
+    padding: 4.5rem 6%;
+  }
+
+  .first-edit-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .first-edit-statement {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--edit-border-light);
+    padding-top: 2.2rem;
+  }
+
+  .palette-row-top,
+  .palette-row-bottom {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Section 3 stacking */
+  .section-silhouette {
+    padding: 5rem 6%;
+  }
+
+  .silhouette-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  /* Section 4 stacking */
+  .section-mark-identity {
+    padding: 5rem 6%;
+  }
+
+  .mark-identity-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Section 5 stacking */
+  .lifestyle-triptych-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Tablet Portrait & Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .palette-row-top {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .palette-row-bottom {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .edit-hero-title {
+    font-size: clamp(2.2rem, 7.5vw, 3.4rem);
+  }
+
+  .edit-hero-right {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .craftsmanship-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .lifestyle-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Small Mobile Devices (max-width: 540px) */
+@media (max-width: 540px) {
+  .edit-hero-left.hero-content {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .edit-hero-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .edit-cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .palette-grid-wrapper {
+    gap: 1.5rem;
+  }
+
+  .palette-row-top,
+  .palette-row-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .first-edit-intro .first-edit-headline {
+    font-size: 1.8rem;
+  }
+
+  .edit-btn-dark {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .silhouette-content-overlay {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .silhouette-headline {
+    font-size: 2rem;
+  }
+
+  .edit-cta-button-light {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .closing-headline {
+    font-size: 1.6rem;
+  }
+
+  .closing-cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
